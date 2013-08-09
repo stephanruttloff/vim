@@ -49,6 +49,7 @@ map <silent> <A-Left> :wincmd h<CR>
 map <silent> <A-Right> :wincmd l<CR>
 
 "	---VISUALS---
+set t_Co=256 "putty color fix
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
