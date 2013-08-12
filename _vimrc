@@ -1,32 +1,5 @@
-"set nocompatible
-"source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
-"
-"set diffexpr=MyDiff()
-"function MyDiff()
-"  let opt = '-a --binary '
-"  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-"  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-"  let arg1 = v:fname_in
-"  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-"  let arg2 = v:fname_new
-"  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-"  let arg3 = v:fname_out
-"  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-"  let eq = ''
-"  if $VIMRUNTIME =~ ' '
-"    if &sh =~ '\<cmd'
-"      let cmd = '""' . $VIMRUNTIME . '\diff"'
-"      let eq = '"'
-"    else
-"      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-"    endif
-"  else
-"    let cmd = $VIMRUNTIME . '\diff'
-"  endif
-"  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-"endfunction
+execute pathogen#infect()
+execute pathogen#helptags()
 
 let mapleader=","
 syntax enable
@@ -35,20 +8,23 @@ set undofile
 set undodir=~/.vim/vim_undo
 set undolevels=1000
 set undoreload=10000
-execute pathogen#infect()
 
-"	---MAPPINGS---
+" MAPPINGS
+" Load last session
 map <F2> :source ~/.vim/autosession <cr>
-map <F3> :tabp <cr>
-map <F4> :tabn <cr>
-map <F5> :tabnew <cr>
+" Tab handling
+map <F3> :tabnew <cr>
+map <F4> :tabp <cr>
+map <F5> :tabn <cr>
+" NERDTree
 map <F12> :NERDTreeToggle <cr>
+" Window movement
 map <silent> <A-Up> :wincmd k<CR>
 map <silent> <A-Down> :wincmd j<CR>
 map <silent> <A-Left> :wincmd h<CR>
 map <silent> <A-Right> :wincmd l<CR>
 
-"	---VISUALS---
+" VISUALS
 set t_Co=256 "putty color fix
 set guioptions-=m
 set guioptions-=T
@@ -95,6 +71,34 @@ set hidden
 set history=50
 set mouse=v
 
-" Sessions ********************************************************************
+" SESSIONS
 set sessionoptions=blank,buffers,curdir,folds,help,options,resize,tabpages,winpos,winsize
 au VimLeave * mks! ~/.vim/autosession
+
+" Auto reload vimrc after edit
+if has("autocmd")
+	autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+endif
+
+"Open vimrc with <leader>v
+nmap <leader>v :tabedit $MYVIMRC <CR>
+
+" WRAPPING
+set wrap linebreak
+command! -nargs=* Wrap set wrap linebreak
+command! -nargs=* Nowrap set nowrap nolinebreak 
+"Wrapping - move to wrapped line with Alt + hjkl in normal and visual mode
+nmap <A-j> gj
+nmap <A-k> gk
+nmap <A-h> gh
+nmap <A-l> gl
+vmap <A-j> gj
+vmap <A-k> gk
+vmap <A-h> gh
+vmap <A-l> gl
+
+" Text bubble (needs unimpaired.vim)
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
