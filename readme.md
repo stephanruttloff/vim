@@ -3,10 +3,11 @@
 Das hier sind meine ganz persönlichen Vim Settings und Plugins.
 Alles ist strikt an meinen Workflow und meine Gewohnheiten angepasst.
 
-
 ## Installation
 
 ### Windows
+
+Unter Windows sind folgende Kommandos auszuführen:
 
 	cd [path-to-vim]
 	git clone http://git.ruttloff.org/rudzn/vim.git
@@ -33,8 +34,11 @@ Sollen neue Dateien nicht in einem neuen Fenster, sondern in einem neuen Tabim b
 
 	@="C:\\Program Files (x86)\\Vim\\vim73\\gvim.exe --remote-tab-silent \"%1\""
 
+Danach sollte der Eintrag "Edit with Vim" im Kontextmenü erscheinen.
 
 ### Linux
+
+Unter Linux sind folgende Kommandos auszuführen:
 
 	cd ~
 	git clone http://git.ruttloff.org/rudzn/vim.git vimrepo
