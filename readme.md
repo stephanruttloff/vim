@@ -29,3 +29,14 @@ Anschließend muss noch unter `C:\Benutzer\[Name]\` folgende Ordnerstruktur angel
 	git submodule foreach git pull origin master
 	ls -l ~/vimrepo/_vimrc ~/.vimrc
 	ls -l ~/vimrepo/vimfiles ~/.vim
+	mkdir ~/.vim/swap
+	mkdir ~/.vim/undo
+
+Um den Shortcut CTRL + S (speichern) zu verwenden, muss folgendes zur .bashrc hinzugefügt werden:
+
+	stty ixany
+	stty ixoff -ixon
+	stty stop undef
+	stty start undef
+
+Hintergrund: CRTL + S sendet XOFF, wodurch das Terminal nicht mehr aktualisiert wird. Die obigen Einträge verhindern das.

@@ -105,7 +105,8 @@ vmap <C-k> [egv
 vmap <C-j> ]egv
 
 " Save with CTRL + s
-nmap <C-s> :w <cr>
+nmap <C-s> :w<cr>
+imap <C-s> <ESC>:w<cr>a
 
 " Enable paste from system clipboard (only tested on windows)
 nmap <C-p> "*p
@@ -124,3 +125,7 @@ nnoremap <Space> za
 " create the appropriate folder first
 " (see ":echo &directory" for the exact path)
 set directory=~/.vim/swap/
+
+" Exit out with ALT + q
+nmap <A-q> :qa<cr>
+imap <C-q> <ESC>:qa<cr>
