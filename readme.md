@@ -3,6 +3,7 @@
 Das hier sind meine ganz persönlichen Vim Settings und Plugins.
 Alles ist strikt an meinen Workflow und meine Gewohnheiten angepasst.
 
+
 ## Installation
 
 ### Windows
@@ -31,6 +32,7 @@ Um Dateien in Vim direkt über das Kontextmenü des Explorers zu öffnen muss folge
 Sollen neue Dateien nicht in einem neuen Fenster, sondern in einem neuen Tabim bestehenden Vim Fenster angezeigt werden, muss die letzte Zeile durch folgende ersetzt werden:
 
 	@="C:\\Program Files (x86)\\Vim\\vim73\\gvim.exe --remote-tab-silent \"%1\""
+
 
 ### Linux
 
