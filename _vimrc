@@ -4,8 +4,8 @@ execute pathogen#helptags()
 let mapleader=","
 syntax enable
 set cmdheight=2
+set undodir=~/.vim/undo
 set undofile
-set undodir=~/.vim/vim_undo
 set undolevels=1000
 set undoreload=10000
 
@@ -37,7 +37,6 @@ set guioptions-=L
 set guioptions-=e
 set background=dark
 colorscheme solarized
-set nowrap        
 set scrolloff=2  
 set number      
 set showmatch  
@@ -73,7 +72,9 @@ set mouse=v
 
 " SESSIONS
 set sessionoptions=blank,buffers,curdir,folds,help,options,resize,tabpages,winpos,winsize
-au VimLeave * mks! ~/.vim/autosession
+if has("autocmd")
+	au VimLeave * mks! ~/.vim/autosession
+endif
 
 " Auto reload vimrc after edit
 if has("autocmd")
@@ -102,3 +103,24 @@ nmap <C-k> [e
 nmap <C-j> ]e
 vmap <C-k> [egv
 vmap <C-j> ]egv
+
+" Save with CTRL + s
+nmap <C-s> :w <cr>
+
+" Enable paste from system clipboard (only tested on windows)
+nmap <C-p> "*p
+
+" Markdown folding (needs vim-markdown-folding plugin)
+set nocompatible
+if has("autocmd")
+	au BufRead,BufNewFile *.md set filetype=markdown
+	filetype plugin indent on
+endif
+nnoremap <Space> za
+
+" Move those nasty swap files to .vim dir
+" If you get any error stating that the swap
+" file could not be created you have to
+" create the appropriate folder first
+" (see ":echo &directory" for the exact path)
+set directory=~/.vim/swap/

@@ -1,26 +1,31 @@
-Vim Settings
-============
+# Vim Settings & Plugins
 
-Windows
--------
+Das hier sind meine ganz persönlichen Vim Settings und Plugins.
+Alles ist strikt an meinen Workflow und meine Gewohnheiten angepasst.
 
-Einfach in das Vim Directory (...Program Files\Vim) clonen und fertig.
+## Installation
 
-Linux
------
+### Windows
 
-Eigenen Ordner im Home anlegen, hinein clonen und symlinks setzen.
-
-- _vimrc nach ~/.vimrc verlinken
-- vimfiles nach ~/.vim verlinken
-
-Plugins
--------
-
-Die Plugins sind als Git Submodules eingebunden.
-
-PLugins Updaten:
-
+	cd [path-to-vim]
+	git clone http://git.ruttloff.org/rudzn/vim.git
 	git submodule init
 	git submodule update
 	git submodule foreach git pull origin master
+
+Anschließend muss noch unter `C:\Benutzer\[Name]\` folgende Ordnerstruktur angelegt werden:
+
+	.\.vim
+	.\.vim\swap
+	.\.vim\undo
+
+### Linux
+
+	cd ~
+	git clone http://git.ruttloff.org/rudzn/vim.git vimrepo
+	cd vimrepo
+	git submodule init
+	git submodule update
+	git submodule foreach git pull origin master
+	ls -l ~/vimrepo/_vimrc ~/.vimrc
+	ls -l ~/vimrepo/vimfiles ~/.vim
