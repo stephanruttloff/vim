@@ -129,3 +129,6 @@ set directory=~/.vim/swap/
 " Exit out with ALT + q
 nmap <C-q> :qa<cr>
 imap <C-q> <ESC>:qa<cr>
+
+" Gundo plugin
+nmap <F8> :GundoToggle<cr>
