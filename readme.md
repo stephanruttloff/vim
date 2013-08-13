@@ -19,6 +19,19 @@ Anschließend muss noch unter `C:\Benutzer\[Name]\` folgende Ordnerstruktur angel
 	.\.vim\swap
 	.\.vim\undo
 
+Um Dateien in Vim direkt über das Kontextmenü des Explorers zu öffnen muss folgender Eintrag in der Registry vorgenommen werden:
+
+	Windows Registry Editor Version 5.00
+
+	[HKEY_CLASSES_ROOT\*\shell\Edit with Vim]
+
+	[HKEY_CLASSES_ROOT\*\shell\Edit with Vim\command]
+	@="C:\\Program Files (x86)\\Vim\\vim73\\gvim.exe \"%1\""
+
+Sollen neue Dateien nicht in einem neuen Fenster, sondern in einem neuen Tabim bestehenden Vim Fenster angezeigt werden, muss die letzte Zeile durch folgende ersetzt werden:
+
+	@="C:\\Program Files (x86)\\Vim\\vim73\\gvim.exe --remote-tab-silent \"%1\""
+
 ### Linux
 
 	cd ~
