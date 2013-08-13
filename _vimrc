@@ -127,7 +127,5 @@ nnoremap <Space> za
 set directory=~/.vim/swap/
 
 " Exit out with ALT + q
-nmap <A-q> :qa<cr>
-imap <A-q> <ESC>:qa<cr>
-nmap ^<A-q> :qa<cr>
-imap ^<A-q> <ESC>:qa<cr>
+nmap <C-q> :qa<cr>
+imap <C-q> <ESC>:qa<cr>
