@@ -13,3 +13,4 @@
 [submodule "vimfiles/bundle/solarized"]
 	path = vimfiles/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+	ignore = dirty 
