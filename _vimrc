@@ -35,8 +35,12 @@ set guioptions-=b
 set guioptions-=R
 set guioptions-=L
 set guioptions-=e
+
+" Solarized
 set background=dark
 colorscheme solarized
+call togglebg#map("<F6>")
+
 set scrolloff=2  
 set number      
 set showmatch  
