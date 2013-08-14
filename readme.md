@@ -11,15 +11,17 @@ Unter Windows sind folgende Kommandos auszuführen:
 
 	cd [path-to-vim]
 	git clone http://git.ruttloff.org/rudzn/vim.git
+	git submodule foreach git pull origin master
 	git submodule init
 	git submodule update
-	git submodule foreach git pull origin master
 
 Anschließend muss noch unter `C:\Benutzer\[Name]\` folgende Ordnerstruktur angelegt werden:
 
 	.\.vim
 	.\.vim\swap
 	.\.vim\undo
+
+**---Ab Vim 7.4 nicht mehr nötig---**
 
 Um Dateien in Vim direkt über das Kontextmenü des Explorers zu öffnen muss folgender Eintrag in der Registry vorgenommen werden:
 
@@ -43,9 +45,9 @@ Unter Linux sind folgende Kommandos auszuführen:
 	cd ~
 	git clone http://git.ruttloff.org/rudzn/vim.git vimrepo
 	cd vimrepo
+	git submodule foreach git pull origin master
 	git submodule init
 	git submodule update
-	git submodule foreach git pull origin master
 	ls -l ~/vimrepo/_vimrc ~/.vimrc
 	ls -l ~/vimrepo/vimfiles ~/.vim
 	mkdir ~/.vim/swap
