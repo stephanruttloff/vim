@@ -40,6 +40,7 @@ set guioptions-=e
 set background=dark
 colorscheme solarized
 call togglebg#map("<F6>")
+let g:airline_theme='solarized'
 
 set scrolloff=2  
 set number      
@@ -113,7 +114,7 @@ nmap <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>a
 
 " Enable paste from system clipboard (only tested on windows)
-nmap <C-p> "*p
+nmap <F9> "*p
 
 " Markdown folding (needs vim-markdown-folding plugin)
 set nocompatible
@@ -131,8 +132,13 @@ nnoremap <Space> za
 set directory=~/.vim/swap/
 
 " Exit out with ALT + q
-nmap <C-q> :qa<cr>
-imap <C-q> <ESC>:qa<cr>
+nmap <C-q> :q<cr>
+imap <C-q> <ESC>:q<cr>
+nmap <C-S-q> :qa<cr>
+imap <C-S-q> <ESC>:qa<cr>
 
 " Gundo plugin
 nmap <F8> :GundoToggle<cr>
+
+" Always set working dir to current file dir
+set autochdir
