@@ -37,7 +37,11 @@ set guioptions-=L
 set guioptions-=e
 
 " Solarized
-set background=dark
+if strftime("%H") > 8 && strftime("%H") < 20
+	set background=light
+else
+	set background=dark
+endif
 colorscheme solarized
 call togglebg#map("<F6>")
 let g:airline_theme='solarized'
@@ -142,3 +146,17 @@ nmap <F8> :GundoToggle<cr>
 
 " Always set working dir to current file dir
 set autochdir
+
+" ctrlp settings
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = "~/.vim/ctrlp"
+
+" set font to consolas on windows
+if has("gui_running")
+	if has("gui_win32")
+		set guifont=Consolas:h10:cANSI
+	endif
+endif
+
+"toggle hlsearch
+nnoremap <F11> :set hlsearch!<cr>
