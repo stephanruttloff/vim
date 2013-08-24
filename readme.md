@@ -48,8 +48,8 @@ Unter Linux sind folgende Kommandos auszuführen:
 	git submodule foreach git pull origin master
 	git submodule init
 	git submodule update
-	ls -l ~/vimrepo/_vimrc ~/.vimrc
-	ls -l ~/vimrepo/vimfiles ~/.vim
+	ln -s ~/vimrepo/_vimrc ~/.vimrc
+	ln -s ~/vimrepo/vimfiles ~/.vim
 	mkdir ~/.vim/swap
 	mkdir ~/.vim/undo
 
