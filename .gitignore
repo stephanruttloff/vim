@@ -1,2 +1,6 @@
 /vim[0-9][0-9]
 *.swp
+/.vim
+/_viminfo
+/gVimPortableSettings.ini
+/.gitconfig
