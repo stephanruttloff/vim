@@ -1,8 +1,6 @@
 execute pathogen#infect()
 execute pathogen#helptags()
 
-source $VIMRUNTIME/mswin.vim 
-
 let mapleader=","
 syntax enable
 set cmdheight=2
