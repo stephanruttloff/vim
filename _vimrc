@@ -1,6 +1,8 @@
 execute pathogen#infect()
 execute pathogen#helptags()
 
+source $VIMRUNTIME/mswin.vim 
+
 let mapleader=","
 syntax enable
 set cmdheight=2
@@ -113,12 +115,18 @@ nmap <C-j> ]e
 vmap <C-k> [egv
 vmap <C-j> ]egv
 
+" GUI related stuff like open and save via window
+if has("gui_running")
+	nmap <C-o> :browse confirm tabe<cr>
+	nmap <C-M-s> :bro sav<cr>
+endif
 " Save with CTRL + s
 nmap <C-s> :w<cr>
 imap <C-s> <ESC>:w<cr>a
 
 " Enable paste from system clipboard (only tested on windows)
 nmap <F9> "*p
+imap <F9> <ESC>"*pi
 
 " Markdown folding (needs vim-markdown-folding plugin)
 set nocompatible
@@ -157,6 +165,7 @@ if has("gui_running")
 		set guifont=Consolas:h10:cANSI
 	endif
 endif
+let g:ctrlp_open_new_file = 't'
 
 "toggle hlsearch
 nnoremap <F11> :set hlsearch!<cr>
